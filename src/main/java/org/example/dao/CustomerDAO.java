@@ -39,4 +39,15 @@ public class CustomerDAO {
 
         return findAllQuery.getResultList();
     }
+
+    public static void delete(Customer customer)
+    {
+        EntityManager entityManager = EntityManagerSingleton.getEntityManager();
+
+        EntityTransaction tx = entityManager.getTransaction();
+        tx.begin();
+        entityManager.remove(customer);
+        tx.commit();
+    }
+
 }
