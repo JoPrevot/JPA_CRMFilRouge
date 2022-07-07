@@ -1,7 +1,9 @@
 package org.example;
 
 import org.example.dao.CustomerDAO;
+import org.example.dao.PaymentDAO;
 import org.example.entity.Customer;
+import org.example.entity.Payment;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -143,4 +145,93 @@ public class AppTest {
             }
         }
     }
+
+    // Partie Exercice
+
+    @Test
+    public void createPayment() {
+        Payment payment = new Payment();
+        payment.setCardNumber("010101010101");
+        payment.setConfidentialCode("3630");
+        payment.setBank("Allo père noel");
+
+        PaymentDAO.createPayment(payment);
+
+        assertTrue(true);
+    }
+
+    @Test
+    public void findAllPayment() {
+        PaymentDAO.createPayment(new Payment("010101010101","3630","Allo pere noel"));
+        PaymentDAO.createPayment(new Payment("020202020202","1212","Pages jaunes"));
+        PaymentDAO.createPayment(new Payment("030303030303","8080","Rothschild"));
+
+        List<Payment> payments = PaymentDAO.findAllPayment();
+
+        assertEquals(3, payments.size());
+    }
+
+    @Test
+    public void findPaymentById() {
+        Payment payment = new Payment();
+        payment.setCardNumber("010101010101");
+        payment.setConfidentialCode("3630");
+        payment.setBank("Allo père noel");
+
+        PaymentDAO.createPayment(payment);
+
+        Payment paymentFind = PaymentDAO.findPaymentById(payment.getId());
+
+        assertEquals("3630", paymentFind.getConfidentialCode());
+    }
+
+    @Test
+    public void updatePayment() {
+        Payment payment = new Payment();
+        payment.setCardNumber("010101010101");
+        payment.setConfidentialCode("3630");
+        payment.setBank("Allo père noel");
+
+        PaymentDAO.createPayment(payment);
+
+        /********************/
+
+        Payment newPaymentData = new Payment();
+        newPaymentData.setConfidentialCode("9999");
+        newPaymentData.setBank("Santa Capitalism");
+
+        PaymentDAO.updatePayment(payment.getId(),newPaymentData);
+
+        assertEquals("Santa Capitalism", newPaymentData.getBank());
+    }
+    @Test
+    public void deletePayment() {
+        Payment boulangerie = new Payment("010101010101","3630","Baguette Invest");
+        PaymentDAO.createPayment(boulangerie);
+
+        List<Payment> payments = PaymentDAO.findAllPayment();
+        assertEquals(1, payments.size());
+
+        PaymentDAO.deletePayment(boulangerie);
+
+        payments = PaymentDAO.findAllPayment();
+        assertEquals(0, payments.size());
+    }
+    @Test
+    public void deletePaymentById() {
+        PaymentDAO.createPayment(new Payment("010101010101","3630","Allo pere noel"));
+        PaymentDAO.createPayment(new Payment("020202020202","1212","Pages jaunes"));
+        PaymentDAO.createPayment(new Payment("030303030303","8080","Rothschild"));
+
+        List<Payment> payments = PaymentDAO.findAllPayment();
+        assertEquals(3, payments.size());
+
+        PaymentDAO.deletePaymentById(3);
+
+//        CustomerDAO.deleteCustomerById(jean.getId());
+
+        payments = PaymentDAO.findAllPayment();
+        assertEquals(2, payments.size());
+    }
+
 }

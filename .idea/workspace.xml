@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b8fa915-2fdc-4c4d-a81b-0f72513885b7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/PaymentDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/entity/Payment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/CustomerDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entity/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,8 +43,8 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.AppTest.selectWhere">
-    <configuration name="AppTest.deleteCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.AppTest.deletePaymentById">
+    <configuration name="AppTest.deleteCPayment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CrmFilRouge" />
       <extension name="coverage">
         <pattern>
@@ -54,13 +54,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.AppTest" />
-      <option name="METHOD_NAME" value="deleteCustomer" />
+      <option name="METHOD_NAME" value="deleteCPayment" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppTest.deleteCustomerById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AppTest.deletePaymentById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CrmFilRouge" />
       <extension name="coverage">
         <pattern>
@@ -70,13 +70,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.AppTest" />
-      <option name="METHOD_NAME" value="deleteCustomerById" />
+      <option name="METHOD_NAME" value="deletePaymentById" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppTest.findAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AppTest.findAllPayments" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CrmFilRouge" />
       <extension name="coverage">
         <pattern>
@@ -86,13 +86,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.AppTest" />
-      <option name="METHOD_NAME" value="findAll" />
+      <option name="METHOD_NAME" value="findAllPayments" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppTest.selectWhere" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AppTest.findPaymentById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CrmFilRouge" />
       <extension name="coverage">
         <pattern>
@@ -102,13 +102,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.AppTest" />
-      <option name="METHOD_NAME" value="selectWhere" />
+      <option name="METHOD_NAME" value="findPaymentById" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppTest.updateCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AppTest.updatePayment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CrmFilRouge" />
       <extension name="coverage">
         <pattern>
@@ -118,7 +118,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.AppTest" />
-      <option name="METHOD_NAME" value="updateCustomer" />
+      <option name="METHOD_NAME" value="updatePayment" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -126,11 +126,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AppTest.selectWhere" />
-        <item itemvalue="JUnit.AppTest.updateCustomer" />
-        <item itemvalue="JUnit.AppTest.deleteCustomerById" />
-        <item itemvalue="JUnit.AppTest.deleteCustomer" />
-        <item itemvalue="JUnit.AppTest.findAll" />
+        <item itemvalue="JUnit.AppTest.deletePaymentById" />
+        <item itemvalue="JUnit.AppTest.findPaymentById" />
+        <item itemvalue="JUnit.AppTest.updatePayment" />
+        <item itemvalue="JUnit.AppTest.deleteCPayment" />
+        <item itemvalue="JUnit.AppTest.findAllPayments" />
       </list>
     </recent_temporary>
   </component>
