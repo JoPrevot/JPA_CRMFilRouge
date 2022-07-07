@@ -24,7 +24,7 @@ public class Customer {
     private String phone;
     @Column(name = "zip_code")
     private String zipCode;
-    private int state;
+    private Integer state;
 
     public Customer()
     {
@@ -116,11 +116,55 @@ public class Customer {
         this.zipCode = zipCode;
     }
 
-    public int getState() {
+    public Integer getState() {
         return state;
     }
 
-    public void setState(int state) {
+    public void setState(Integer state) {
         this.state = state;
+    }
+
+    public void setNotNullData(Customer newCustomerData)
+    {
+        if(newCustomerData.getFirstName() != null)
+        {
+            this.setFirstName(newCustomerData.getFirstName());
+        }
+        if(newCustomerData.getLastName() != null)
+        {
+            this.setLastName(newCustomerData.getLastName());
+        }
+        if(newCustomerData.getAddress() != null)
+        {
+            this.setAddress(newCustomerData.getAddress());
+        }
+        if(newCustomerData.getCity() != null)
+        {
+            this.setCity(newCustomerData.getCity());
+        }
+        if(newCustomerData.getCountry() != null)
+        {
+            this.setCountry(newCustomerData.getCountry());
+        }
+        if(newCustomerData.getCompanyName() != null)
+        {
+            this.setCompanyName(newCustomerData.getCompanyName());
+        }
+        if(newCustomerData.getPhone() != null)
+        {
+            this.setPhone(newCustomerData.getPhone());
+        }
+        if(newCustomerData.getZipCode() != null)
+        {
+            this.setZipCode(newCustomerData.getZipCode());
+        }
+        if(newCustomerData.getEmail() != null)
+        {
+            this.setEmail(newCustomerData.getEmail());
+        }
+        if(newCustomerData.getState() != null)
+        {
+            this.setState(newCustomerData.getState());
+        }
     }
 }

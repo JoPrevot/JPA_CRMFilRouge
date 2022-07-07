@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.dao.CustomerDAO;
 import org.example.entity.Customer;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.List;
@@ -9,11 +10,9 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 
-public class AppTest 
-{
+public class AppTest {
     @Test
-    public void createCustomer()
-    {
+    public void createCustomer() {
         Customer customer = new Customer();
         customer.setFirstName("Jean");
         customer.setLastName("Valjean");
@@ -24,8 +23,7 @@ public class AppTest
     }
 
     @Test
-    public void findById()
-    {
+    public void findById() {
         Customer customer = new Customer();
         customer.setFirstName("Jean");
         customer.setLastName("Valjean");
@@ -34,39 +32,115 @@ public class AppTest
 
         Customer customer1 = CustomerDAO.findById(customer.getId());
 
-        assertEquals("Jean",customer1.getFirstName());
+        assertEquals("Jean", customer1.getFirstName());
     }
 
     @Test
-    public void dontFindById()
-    {
+    public void dontFindById() {
         Customer customer = CustomerDAO.findById(5);
         assertNull(customer);
     }
 
     @Test
-    public void findAll()
-    {
+    public void findAll() {
         CustomerDAO.create(new Customer("Marie"));
         CustomerDAO.create(new Customer("Michel"));
         CustomerDAO.create(new Customer("Alex"));
 
         List<Customer> customers = CustomerDAO.findAll();
-        assertEquals(3,customers.size());
+        assertEquals(3, customers.size());
     }
 
     @Test
-    public void deleteCustomer()
-    {
+    public void deleteCustomer() {
         Customer marie = new Customer("Marie");
         CustomerDAO.create(marie);
 
         List<Customer> customers = CustomerDAO.findAll();
-        assertEquals(1,customers.size());
+        assertEquals(1, customers.size());
 
         CustomerDAO.delete(marie);
 
         customers = CustomerDAO.findAll();
-        assertEquals(0,customers.size());
+        assertEquals(0, customers.size());
+    }
+
+    @Test
+    public void deleteCustomerById() {
+        CustomerDAO.create(new Customer("Marie"));
+        CustomerDAO.create(new Customer("Michel"));
+        CustomerDAO.create(new Customer("Alex"));
+//        Customer jean = new Customer("Jean");
+//        CustomerDAO.create(jean);
+
+        List<Customer> customers = CustomerDAO.findAll();
+        assertEquals(3, customers.size());
+
+        CustomerDAO.deleteCustomerById(3);
+
+//        CustomerDAO.deleteCustomerById(jean.getId());
+
+        customers = CustomerDAO.findAll();
+        assertEquals(2, customers.size());
+    }
+
+    @Test
+    public void updateCustomer() {
+        Customer customer = new Customer();
+        customer.setFirstName("Alain");
+        customer.setLastName("Delon");
+        customer.setAddress("rue de la mairie");
+        customer.setCity("Paris");
+        customer.setCompanyName("Google");
+        customer.setCountry("France");
+        customer.setEmail("alain@delon.fr");
+        customer.setPhone("0606060606");
+        customer.setZipCode("75000");
+        customer.setState(1);
+
+        CustomerDAO.create(customer);
+
+        /********************/
+
+        Customer newCustomerData = new Customer();
+        newCustomerData.setFirstName("Jean-Paul");
+        newCustomerData.setLastName("Belmondo");
+
+        CustomerDAO.update(customer.getId(), newCustomerData);
+
+        assertEquals("Jean-Paul", newCustomerData.getFirstName());
+        assertEquals("Belmondo", newCustomerData.getLastName());
+    }
+
+    @Test
+    public void selectWhere() {
+        Customer customer1 = new Customer();
+        customer1.setFirstName("Alain");
+        customer1.setLastName("Delon");
+        CustomerDAO.create(customer1);
+
+        Customer customer2 = new Customer();
+        customer2.setFirstName("Alain");
+        customer2.setLastName("Prost");
+        CustomerDAO.create(customer2);
+
+        Customer customer3 = new Customer();
+        customer3.setFirstName("Marie");
+        customer3.setLastName("Dupont");
+        CustomerDAO.create(customer3);
+
+        /*****************/
+
+        List<Customer> alains = CustomerDAO.findByFirstName("Alain");
+
+        /*****************/
+
+        assertEquals(2, alains.size());
+
+        for (Customer c : alains) {
+            if (!c.getFirstName().equals("Alain")) {
+                assertTrue(false);
+            }
+        }
     }
 }

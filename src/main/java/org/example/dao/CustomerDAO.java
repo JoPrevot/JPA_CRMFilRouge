@@ -50,4 +50,53 @@ public class CustomerDAO {
         tx.commit();
     }
 
+    public static void deleteCustomerById(long id)
+    {
+//        Methode la plus courte :
+//        Customer customerToDelete = findById(id);
+//        delete(customerToDelete);
+
+        EntityManager entityManager = EntityManagerSingleton.getEntityManager();
+
+        Customer customer = entityManager.find(Customer.class, id);
+
+        EntityTransaction tx = entityManager.getTransaction();
+        tx.begin();
+        entityManager.remove(customer);
+        tx.commit();
+    }
+
+    public static void update(Long id, Customer newCustomerData)
+    {
+        EntityManager entityManager = EntityManagerSingleton.getEntityManager();
+
+        Customer customerToUpdate = entityManager.find(Customer.class,id);
+
+        customerToUpdate.setNotNullData(newCustomerData);
+
+        EntityTransaction tx = entityManager.getTransaction();;
+
+        try
+        {
+            tx.begin();
+            entityManager.merge(customerToUpdate);
+            tx.commit();
+        }
+        catch (Exception e)
+        {
+            tx.rollback();
+        }
+
+    }
+
+    public static List<Customer> findByFirstName(String firstName)
+    {
+        EntityManager entityManager = EntityManagerSingleton.getEntityManager();
+
+        Query queryToFindCustomerByFirstName = entityManager.createQuery("select c from Customer c where c.firstName = :firstName");
+        queryToFindCustomerByFirstName.setParameter("firstName", firstName);
+
+        return queryToFindCustomerByFirstName.getResultList();
+    }
+
 }
