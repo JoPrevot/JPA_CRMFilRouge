@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b8fa915-2fdc-4c4d-a81b-0f72513885b7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/PaymentDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/entity/Payment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/AddressDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/ProductDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/entity/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/entity/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/RelationshipTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entity/Customer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,23 +46,13 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.AppTest.deletePaymentById">
-    <configuration name="AppTest.deleteCPayment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CrmFilRouge" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.AppTest" />
-      <option name="METHOD_NAME" value="deleteCPayment" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.example.dao" />
+      <recent name="org.example.entity" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.RelationshipTest.ManyToMany">
     <configuration name="AppTest.deletePaymentById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CrmFilRouge" />
       <extension name="coverage">
@@ -71,22 +64,6 @@
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.AppTest" />
       <option name="METHOD_NAME" value="deletePaymentById" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AppTest.findAllPayments" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CrmFilRouge" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.AppTest" />
-      <option name="METHOD_NAME" value="findAllPayments" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -108,7 +85,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppTest.updatePayment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RelationshipTest.ManyToMany" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CrmFilRouge" />
       <extension name="coverage">
         <pattern>
@@ -117,8 +94,40 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.AppTest" />
-      <option name="METHOD_NAME" value="updatePayment" />
+      <option name="MAIN_CLASS_NAME" value="org.example.RelationshipTest" />
+      <option name="METHOD_NAME" value="ManyToMany" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RelationshipTest.manyToOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CrmFilRouge" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.RelationshipTest" />
+      <option name="METHOD_NAME" value="manyToOne" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RelationshipTest.oneToOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CrmFilRouge" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.RelationshipTest" />
+      <option name="METHOD_NAME" value="oneToOne" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -126,11 +135,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RelationshipTest.ManyToMany" />
+        <item itemvalue="JUnit.RelationshipTest.manyToOne" />
+        <item itemvalue="JUnit.RelationshipTest.oneToOne" />
         <item itemvalue="JUnit.AppTest.deletePaymentById" />
         <item itemvalue="JUnit.AppTest.findPaymentById" />
-        <item itemvalue="JUnit.AppTest.updatePayment" />
-        <item itemvalue="JUnit.AppTest.deleteCPayment" />
-        <item itemvalue="JUnit.AppTest.findAllPayments" />
       </list>
     </recent_temporary>
   </component>
@@ -155,16 +164,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/jpa/EntityManagerSingleton.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

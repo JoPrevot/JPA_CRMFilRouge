@@ -1,6 +1,8 @@
 package org.example.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="customers")
@@ -25,6 +27,22 @@ public class Customer {
     @Column(name = "zip_code")
     private String zipCode;
     private Integer state;
+
+    @OneToOne
+    @JoinColumn(name = "payment_id")
+    private Payment payment;
+
+    @ManyToOne
+    @JoinColumn(name = "delivery_address_id")
+    private Address deliveryAddress; // 1 seule adresse par customer, d'où le toOne
+
+    @ManyToMany
+    private List<Product> products = new ArrayList<>();
+
+    public void  addProduct(Product product)
+    {
+        this.products.add(product);
+    }
 
     public Customer()
     {
@@ -122,6 +140,30 @@ public class Customer {
 
     public void setState(Integer state) {
         this.state = state;
+    }
+
+    public Payment getPayment() {
+        return payment;
+    }
+
+    public void setPayment(Payment payment) {
+        this.payment = payment;
+    }
+
+    public Address getDeliveryAddress() {
+        return deliveryAddress;
+    }
+
+    public void setDeliveryAddress(Address deliveryAddress) {
+        this.deliveryAddress = deliveryAddress;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
 
     public void setNotNullData(Customer newCustomerData)
